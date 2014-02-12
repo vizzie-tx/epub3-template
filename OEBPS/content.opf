@@ -18,6 +18,7 @@
 
     <dc:title id="title">TITLE</dc:title>
     <meta refines="#title" property="title-type">main</meta>
+    <meta refines="#title" property="file-as">TITLE</meta>
 
     <dc:language>en</dc:language>
 
@@ -39,6 +40,9 @@
     <!-- <dc:source id="src-id">urn:isbn:9780375704024</dc:source> -->
     <!-- <meta refines="#src-id" property="identifier-type"
 	 scheme="onix:codelist5">15</meta>  -->
+
+    <dc:category>General</dc:category>
+    <dc:description>Description</dc:description>
 
     <!-- iBooks metadata -->
     <!-- Set book version. [major].[minor].[bugfix]  -->
