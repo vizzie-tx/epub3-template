@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+    xmlns="http://www.idpf.org/2007/opf"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/"
+    version="3.0" xml:lang="en"
+    unique-identifier="pub-id"> 
+  <metadata>
+    <!-- one or more dc:identifier - pub-id is primary -->
+    <dc:identifier id="pub-id"></dc:identifier>
+    <!-- 01 = Proprietary, 02=ISBN-10, 03=EAN, 06=DOI, 15=ISBN-13,
+	 22=URN -->
+    <meta refines="#pub-id" property="identifier-type" scheme="onix:codelist5">01</meta> 
+
+    <!-- Required date to uniquely identify version of pub-id -->
+    <meta property="dcterms:modified">2014-02-12T18:53:49Z</meta>
+
+    <dc:title id="title">TITLE</dc:title>
+    <meta refines="#title" property="title-type">main</meta>
+
+    <dc:language>en</dc:language>
+
+    <!-- author data (optional) -->
+    <dc:creator id="creator1">FIRSTNAME LASTNAME</dc:creator>
+    <meta refines="#creator1" property="file-as">LASTNAME, FIRSTNAME</meta>
+    <meta refines="#creator1" property="role" scheme="marc:relators">aut</meta>
+    <meta refines="#creator1" property="display-seq">1</meta>
+   
+    <!-- Publisher Info-->
+    <dc:publisher id="publisher">The Publisher</dc:publisher>
+    <meta refines="#publisher" property="file-as">Publisher, The</meta>
+    <meta refines="#publisher" property="role"
+	  scheme="marc:relators">pbl</meta>
+
+    <!-- <dc:contributor id="contributor" /> -->
+
+    <!-- source hardcopy identifier example -->
+    <!-- <dc:source id="src-id">urn:isbn:9780375704024</dc:source> -->
+    <!-- <meta refines="#src-id" property="identifier-type"
+	 scheme="onix:codelist5">15</meta>  -->
+
+    <!-- iBooks metadata -->
+    <!-- Set book version. [major].[minor].[bugfix]  -->
+    <meta property="ibooks:version">1.0.0</meta>         
+    <!-- true/false Enable custom fonts (via @font-face).  -->
+    <meta property="ibooks:specified-fonts">true</meta> 
+
+    <!-- Kindle cover data -->
+    <meta name="cover" content="cover-image"/>
+  </metadata>
+  <manifest>
+    <!-- book -->
+    <item id="cover" href="cover.xhtml" properties="svg" media-type="application/xhtml+xml"/>
+    <item id="ch01" href="content.xhtml" media-type="application/xhtml+xml"/>
+
+    <!-- Navigation -->
+    <item id="navigation" properties="nav" href="navigation.xhtml"
+	  media-type="application/xhtml+xml"/>
+    <item id="ncx" href="toc.ncx"
+	  media-type="application/x-dtbncx+xml"/>
+
+    <!-- CSS -->
+    <item id="css" href="css/stylesheet.css" media-type="text/css"/>
+    <!-- <item id="font-css" href="css/fonts.css" media-type="text/css"/> -->
+
+    <!-- Fonts -->
+    <!-- <item id="font" href="fonts/Fontin-Regular.ttf" media-type="font/opentype"/> -->
+    <!-- <item id="font-bold" href="fonts/Fontin-Bold.ttf" media-type="font/opentype"/> -->
+    <!-- <item id="font-ital" href="fonts/Fontin-Italic.ttf" media-type="font/opentype"/> -->
+
+    <!-- images -->
+    <item id="cover-image" href="images/cover.jpg" media-type="image/jpeg"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="cover" linear="no"/>
+    <itemref idref="ch01"/>
+    <itemref idref="navigation"/>
+  </spine>
+</package>
