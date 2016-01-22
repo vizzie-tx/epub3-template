@@ -22,12 +22,13 @@ for of in `find OEBPS/fonts -type f`; do
     fi
 done
 
-# Regenerate the TOC file
-${XSLT} $navdoc xslt/navdoc2ncx.xsl > $tocdoc
-
 # update the date in the package doc
 cp $pkgdoc $pkgdocb
 ${XSLT} -ext:on $pkgdocb xslt/update-opf.xsl > ${pkgdoc}
+
+# Regenerate the TOC file
+${XSLT} $navdoc xslt/navdoc2ncx.xsl > $tocdoc
+
 
 rm "$epub"
 ${ZIP} "$epub" -DX0 mimetype
