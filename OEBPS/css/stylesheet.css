@@ -136,55 +136,6 @@ text-align: left;
 /*==IMAGES==*/
 
 
-/*===IN-LINE STYLES===*/
-span.i
-{
-font-style: italic;
-}
-
-span.b
-{
-font-weight: bold;
-}
-
-span.u
-{
-text-decoration: underline;
-}
-
-span.st
-{
-text-decoration: line-through;
-}
-
-/*==in-line combinations==*/
-/* Using something like <span class="i b">... may seem okay, but it causes problems on the Kindle */
-span.ib
-{
-font-style: italic;
-font-weight: bold;
-}
-
-span.iu
-{
-font-style: italic;
-text-decoration: underline;
-}
-
-span.bu
-{
-font-weight: bold;
-text-decoration: underline;
-}
-
-span.ibu
-{
-font-style: italic;
-font-weight: bold;
-text-decoration: underline;
-}
-
-
 /* Superscripted Footnote Text */
 .footnote
 {
@@ -267,9 +218,9 @@ font-weight: bold;
     font-family: Fontin;
 }
 
-/* In a declared TOC list, never show list numbering */
-nav#toc ol {
-  list-style-type: none;
+/* Always page break at the end of a chapter. */
+.chapter {
+    page-break-after: always;
 }
 
 /* Don't show the landmarks or page-list nav elements, just the TOC */
