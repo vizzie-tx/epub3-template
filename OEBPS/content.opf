@@ -41,7 +41,7 @@
     <!-- <meta refines="#src-id" property="identifier-type"
 	 scheme="onix:codelist5">15</meta>  -->
 
-    <dc:category>General</dc:category>
+    <dc:subject>General</dc:subject>
     <dc:description>Description</dc:description>
 
     <!-- iBooks metadata -->
