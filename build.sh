@@ -31,7 +31,7 @@ ${XSLT} -ext:on $pkgdocb xslt/update-opf.xsl > ${pkgdoc}
 
 rm "$epub"
 ${ZIP} "$epub" -DX0 mimetype
-${ZIP} "$epub" -rDX9 META-INF OEBPS --exclude OEBPS/template.xhtml
+${ZIP} "$epub" -rDX9 META-INF OEBPS --exclude OEBPS/\*template.xhtml \*/.gitignore
 ${EPUBCHECK} "$epub"
 
 if [ $? = 0 ]; then
