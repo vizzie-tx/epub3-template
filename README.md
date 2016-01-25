@@ -14,6 +14,7 @@ To use:
  1. Create content in OEBPS directory. 
  2. Update navigation.xhtml with links to content files
  3. Update OEBPS/content.opf. Make sure all files in OEBPS directory are included.
+ 4. Set the name of the epub in build.sh
  4. Run ./build.sh - this will:
     1. Backup each font in ./fonts if a backup doesn't exist
     2. Restore each font from backup if a backup does exist
@@ -32,4 +33,6 @@ Notes:
 
 * The content.opf file will be backed up as content.opf.bak, in case
   anything goes wrong with the xslt update.
+* Font manipulation can be disabled by setting SUBSET_FONTS to false in build.sh
+* .mobi generation can be disabled by setting GEN_KINDLE to false in build.sh
 
